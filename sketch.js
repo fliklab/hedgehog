@@ -4,7 +4,22 @@ function setup() {
   createCanvas(initialWidth, initialWidth);
 }
 
-const bugs = ["🐜", "🐞", "🪳", "🪳", "🪱","🐵","🐸","🐥","🍕","🍷","🚬","🍆","🥕","🥔"];
+const bugs = [
+  "🐜",
+  "🐞",
+  "🪳",
+  "🪳",
+  "🪱",
+  "🐵",
+  "🐸",
+  "🐥",
+  "🍕",
+  "🍷",
+  "🚬",
+  "🍆",
+  "🥕",
+  "🥔",
+];
 
 let i = 0;
 let hold = false;
@@ -25,16 +40,14 @@ function draw() {
 
   stroke(0);
 
-  const bugSize = Math.min(Math.max(cWidth * 0.15),80);
-  textSize(bugSize);
-  text(bugs[i], 30, 180);
-
   rotate(0);
-  const hedgeHogSize = Math.min(Math.max(cWidth * 0.35, 120),200);
+  const hedgeHogSize = Math.min(Math.max(cWidth * 0.35, 120), 400);
   textSize(hedgeHogSize);
-  text("🦔", int(width - hedgeHogSize - 20), 180);
+  text("🦔", int(width - hedgeHogSize * 1.15), hedgeHogSize + 10);
 
-  textSize(40);
+  const bugSize = Math.min(Math.max(cWidth * 0.15), 200);
+  textSize(bugSize);
+  text(bugs[i], 30, hedgeHogSize + 10);
 
   if (hold) i = (i + 1) % bugs.length;
 
